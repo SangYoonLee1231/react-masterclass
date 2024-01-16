@@ -6,8 +6,8 @@ import Header from "./components/Header";
 function Root() {
   return (
     <div className="Root">
-      <Circle bgColor="teal" />
-      <Circle bgColor="tomato" />
+      <Circle bgColor="teal" borderColor="black" />
+      <Circle text="I'm here" bgColor="tomato" />
       <div>
         <Header />
         <Outlet />
