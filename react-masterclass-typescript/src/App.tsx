@@ -1,43 +1,26 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
-  background-color: ${(props) => props.theme.bgColor};
+const Wrapper = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-const H1 = styled.h1`
-  color: ${(props) => props.theme.textColor};
+const Box = styled.div`
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
 
 function App() {
-  const [value, setValue] = useState("");
-  const onChange = (event: React.FormEvent<HTMLInputElement>) => {
-    // console.log(event.currentTarget.value);
-    const {
-      currentTarget: { value },
-    } = event;
-    setValue(value);
-  };
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log("hello", value);
-  };
-
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input
-          value={value}
-          onChange={onChange}
-          type="text"
-          placeholder="username"
-        />
-        <button>Log in</button>
-      </form>
-      <Container>
-        <H1>protected</H1>
-      </Container>
-    </div>
+    <Wrapper>
+      <Box />
+    </Wrapper>
   );
 }
 
